@@ -1,10 +1,11 @@
 import React from 'react';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 import { NativeBaseProvider, StatusBar } from "native-base";
-import { SignIn } from './src/pages/Sigin';
+import { Routes } from './src/routes'
 import { THEME } from './src/styles/theme'
 import { Loading } from './src/Components/Loading'
-import { Home } from './src/pages/home';
+
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -13,12 +14,12 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={THEME}>
-      <StatusBar 
-      barStyle='light-content'
-      backgroundColor={'transparent'}
-      translucent
+      <StatusBar
+        barStyle='light-content'
+        backgroundColor={'transparent'}
+        translucent
       />
-      {fontsLoaded ? <Home /> : <Loading />}
+      {fontsLoaded ? <Routes /> : <Loading />}
     </NativeBaseProvider>
   );
 }
